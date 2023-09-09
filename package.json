@@ -5,7 +5,8 @@
   "description": "An app to resize image dimensions",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "start-dev": "nodemon electron ."
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,11 @@
   },
   "homepage": "https://github.com/vishalnagda1/image-resizer#readme",
   "dependencies": {
-    "electron": "^26.2.0",
     "resize-img": "^2.0.0",
     "toastify-js": "^1.12.0"
+  },
+  "devDependencies": {
+    "electron": "^26.2.0",
+    "nodemon": "^3.0.1"
   }
 }
