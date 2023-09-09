@@ -1,0 +1,23 @@
+{
+  "name": "image-resizer",
+  "version": "1.0.0",
+  "description": "An app to resize image dimensions",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalnagda1/image-resizer.git"
+  },
+  "keywords": [
+    "image-resizer",
+    "resize-image"
+  ],
+  "author": "vishalnagda1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vishalnagda1/image-resizer/issues"
+  },
+  "homepage": "https://github.com/vishalnagda1/image-resizer#readme"
+}
