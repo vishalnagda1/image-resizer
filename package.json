@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/vishalnagda1/image-resizer/issues"
   },
-  "homepage": "https://github.com/vishalnagda1/image-resizer#readme"
+  "homepage": "https://github.com/vishalnagda1/image-resizer#readme",
+  "dependencies": {
+    "electron": "^26.2.0",
+    "resize-img": "^2.0.0",
+    "toastify-js": "^1.12.0"
+  }
 }
