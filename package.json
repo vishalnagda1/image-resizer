@@ -1,5 +1,6 @@
 {
   "name": "image-resizer",
+  "productName": "Image Resizer",
   "version": "1.0.0",
   "description": "An app to resize image dimensions",
   "main": "main.js",
