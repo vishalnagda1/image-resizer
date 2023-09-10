@@ -4,6 +4,7 @@ const outputPath = document.querySelector('#output-path');
 const filename = document.querySelector('#filename');
 const heightInput = document.querySelector('#height');
 const widthInput = document.querySelector('#width');
+const outputDestination = path.join(os.homedir(), 'desktop', 'image-resizer');
 
 function loadImage(e) {
     const file = e.target.files[0];
@@ -23,8 +24,35 @@ function loadImage(e) {
 
     form.style.display = 'block';
     filename.innerText = file.name;
-    outputPath.innerText = path.join(os.homedir(), 'desktop', 'image-resizer')
+    outputPath.innerText = outputDestination;
 }
+
+// Send image data to main
+function sendImage(e) {
+    e.preventDefault();
+
+    const width = widthInput.value;
+    const height = heightInput.value;
+    const imgPath = img.files[0].path;
+
+    if (!img.files[0]) {
+        alertError("Please select an image");
+        return;
+    }
+
+    if (height === '' || width === '') {
+        alertError("Please fill in a height and width");
+        return;
+    }
+
+    // Send to main using ipcRenderer
+    ipcRenderer.send('resize:image', { width, height, imgPath, dest: outputDestination });
+}
+
+// Catch the image:done event
+ipcRenderer.on('image:done', () => {
+    alertSuccess(`Image resized to ${widthInput.value} x ${heightInput.value}`);
+});
 
 // Check allowed image file type
 function isFileImage(file) {
@@ -61,3 +89,4 @@ function alertSuccess(message) {
 }
 
 img.addEventListener('change', loadImage);
+form.addEventListener('submit', sendImage);
