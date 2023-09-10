@@ -6,7 +6,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "start-dev": "nodemon --exec electron ."
+    "start-dev": "export NODE_ENV=development; nodemon --exec electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,15 @@
   },
   "devDependencies": {
     "electron": "^26.2.0",
+    "electron-builder": "^24.6.4",
     "nodemon": "^3.0.1"
-  }
+  },
+  "build": {
+    "mac": {
+       "icon": "assets/icons/mac/icon.icns"
+    },
+    "win": {
+       "icon": "assets/icons/win/icon.png"
+    }
+ }
 }

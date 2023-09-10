@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const resizeImg = require('resize-img');
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV === 'development';
 const isMac = process.platform === 'darwin';
 
 let mainWindow;
