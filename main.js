@@ -12,6 +12,7 @@ function createMainWindow() {
         height: 600,
         resizable: false,
         webPreferences: {
+            nodeIntegration: true,
             preload: path.join(__dirname, 'preload.js')
         }
     })
