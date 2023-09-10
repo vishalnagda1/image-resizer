@@ -9,7 +9,7 @@ function loadImage(e) {
     const file = e.target.files[0];
 
     if (!isFileImage(file)) {
-        console.error('Please select an image');
+        alertError("Please select an image");
         return;
     }
 
@@ -30,6 +30,34 @@ function loadImage(e) {
 function isFileImage(file) {
     const acceptedImageTypes = ['image/gif', 'image/png', 'image/jpeg', 'image/tiff'];
     return file && acceptedImageTypes.includes(file['type']);
+}
+
+function alertError(message) {
+    Toastify.toast({
+        text: message,
+        duration: 3000,
+        close: false,
+        style: {
+            background: "linear-gradient(to right, #ff4747, #ffb193)",
+            color: 'white',
+            padding: "5px 10px",
+            textAlign: 'center',
+        }
+    })
+}
+
+function alertSuccess(message) {
+    Toastify.toast({
+        text: message,
+        duration: 3000,
+        close: false,
+        style: {
+            background: "linear-gradient(to right, #96c93d, #00b09b)",
+            color: "white",
+            padding: "5px 10px",
+            textAlign: 'center',
+        }
+    })
 }
 
 img.addEventListener('change', loadImage);
