@@ -7,6 +7,7 @@
   "scripts": {
     "start": "electron .",
     "start-dev": "export NODE_ENV=development; nodemon --exec electron .",
+    "start-mon": "export NODE_ENV=development; npx electronmon .",
     "build": "electron-builder",
     "build-win": "electron-builder --win"
   },
@@ -38,7 +39,16 @@
        "icon": "assets/icons/mac/icon.icns"
     },
     "win": {
-       "icon": "assets/icons/win/icon.png"
+       "icon": "assets/icons/win/icon.icon.ico"
+    },
+    "linux": {
+      "icon": "assets/icons/linux/icon.png",
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "snap"
+      ]
     }
  }
 }
