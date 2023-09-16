@@ -57,6 +57,7 @@ body {
   line-height: inherit;
   /* 2 */
   overflow: hidden;
+  user-select: none;
 }
 
 /*
